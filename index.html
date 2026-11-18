@@ -10,300 +10,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --red:#EB0017; --red-deep:#B80012; --ink:#0E0D0F; --ink-2:#1A181C; --ink-3:#2A272D;
-  --paper:#FBF8F3; --card:#FFFFFF; --line:#E9E3D9; --mute:#6B6670; --gold:#E2B84B;
-  --display:"Bricolage Grotesque","Inter",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif; --hand:"Caveat",cursive;
-  --r:18px; --wrap:1200px;
-}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.5;-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-h1,h2,h3{font-family:var(--display);letter-spacing:-.025em;line-height:1.02;text-wrap:balance}
-h2{font-size:clamp(30px,4.2vw,50px);font-weight:800}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
-.lede{color:var(--mute);font-size:17px;max-width:60ch;margin-top:12px;text-wrap:pretty}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .15s,background .15s,box-shadow .15s;white-space:nowrap}
-.btn:active{transform:scale(.97)}
-.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-deep)}
-.btn-ghost{border:1.5px solid rgba(255,255,255,.28);color:#fff}.btn-ghost:hover{background:rgba(255,255,255,.1)}
-.btn-line{border:1.5px solid var(--ink);color:var(--ink)}.btn-line:hover{background:var(--ink);color:#fff}
-.btn-sm{height:38px;padding:0 16px;font-size:13.5px}
-:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:6px}
-section{padding:88px 0;position:relative}
-.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
-
-/* concept bar + notes */
-.concept{background:#fff;border-bottom:1px solid var(--line);font-size:13px;color:var(--mute)}
-.concept .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:40px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
-.concept b{color:var(--ink)}
-.toggle{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--ink);font-size:13px}
-.toggle i{width:34px;height:20px;border-radius:99px;background:#d6d0c6;position:relative;transition:background .2s}
-.toggle i::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .2s}
-body.notes .toggle i{background:var(--red)}body.notes .toggle i::after{transform:translateX(14px)}
-.note{display:none;max-width:var(--wrap);margin:0 auto 28px;padding:0 24px}
-.note div{background:#FFF6D6;border:1.5px dashed #C9A227;border-radius:14px;padding:14px 18px;font-size:14px;color:#4a3d0c;display:grid;grid-template-columns:auto 1fr;gap:4px 14px}
-.note b{font-family:var(--display);font-size:22px;grid-row:span 2;color:#8a6d0a}
-.note strong{color:#2e2606}
-body.notes .note{display:block}
-.dark .note{padding-top:20px;margin-bottom:0}
-
-/* header */
-header{position:sticky;top:0;z-index:40;background:rgba(14,13,15,.92);backdrop-filter:blur(12px);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
-.nav{display:flex;align-items:center;gap:28px;height:68px}
-.logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:-.02em}
-.logo span{width:36px;height:36px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-size:12.5px;letter-spacing:.02em}
-.nav nav{display:flex;gap:24px;font-size:14.5px;font-weight:500;margin-left:8px}
-.nav nav a{opacity:.82;padding:6px 0;position:relative}.nav nav a:hover{opacity:1}
-.nav nav a.live::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);margin-right:7px;animation:pulse 1.6s infinite}
-.nav .sp{flex:1}
-.cartbtn{position:relative;height:40px;padding:0 16px;border-radius:99px;border:1.5px solid rgba(255,255,255,.25);font-weight:600;font-size:14px}
-.cartbtn b{background:var(--red);border-radius:99px;padding:1px 7px;margin-left:6px;font-size:12px}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(235,0,23,.7)}50%{box-shadow:0 0 0 6px rgba(235,0,23,0)}}
-
-/* hero */
-.dark{background:var(--ink);color:#fff}
-.hero{padding:72px 0 0;overflow:hidden;background:radial-gradient(900px 500px at 82% 30%,rgba(235,0,23,.22),transparent 60%),var(--ink)}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:7px 14px;font-size:13px;font-weight:600;color:#fff}
-.pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 1.6s infinite}
-h1{font-size:clamp(44px,6.6vw,88px);font-weight:800;margin:22px 0 0}
-h1 em{font-style:normal;position:relative;white-space:nowrap}
-h1 em svg{position:absolute;left:-2%;bottom:-.16em;width:104%;height:.3em;overflow:visible}
-h1 em path{fill:none;stroke:var(--red);stroke-width:7;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;animation:draw 1s .5s ease-out forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-.hero p.sub{font-size:19px;color:rgba(255,255,255,.78);max-width:52ch;margin-top:26px;text-wrap:pretty}
-.hero p.sub b{color:#fff;font-weight:600}
-.hero .cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
-.proof{display:flex;gap:36px;margin-top:44px;flex-wrap:wrap}
-.proof div{font-size:13px;color:rgba(255,255,255,.62);max-width:19ch}
-.proof b{display:block;font-family:var(--display);font-size:30px;color:#fff;letter-spacing:-.02em;line-height:1.1}
-
-.player{background:var(--ink-2);border:1px solid rgba(255,255,255,.1);border-radius:26px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(235,0,23,.45),0 30px 60px -30px #000;position:relative}
-.screen{position:relative;aspect-ratio:16/11;background:#000}
-.screen img{width:100%;height:100%;object-fit:cover}
-.screen::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),transparent 30%,transparent 50%,rgba(0,0,0,.75))}
-.tag{position:absolute;z-index:2;top:14px;left:14px;background:var(--red);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.08em;padding:6px 10px;border-radius:8px;text-transform:uppercase}
-.count{position:absolute;z-index:2;top:14px;right:14px;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);color:#fff;font-size:12.5px;font-weight:600;padding:6px 10px;border-radius:8px;font-variant-numeric:tabular-nums}
-.chat{position:absolute;z-index:2;left:14px;bottom:14px;display:grid;gap:6px;max-width:78%}
-.chat span{background:rgba(20,18,22,.78);backdrop-filter:blur(6px);color:#fff;font-size:12.5px;padding:6px 11px;border-radius:14px 14px 14px 4px;width:fit-content;opacity:0;animation:bubble 9s infinite}
-.chat span b{color:var(--gold);font-weight:600;margin-right:5px}
-.chat span:nth-child(2){animation-delay:1.6s}.chat span:nth-child(3){animation-delay:3.2s}
-@keyframes bubble{0%{opacity:0;transform:translateY(8px)}6%,70%{opacity:1;transform:none}80%,100%{opacity:0}}
-.tray{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.08)}
-.tray img{width:64px;height:64px;border-radius:10px;object-fit:cover;background:#fff}
-.tray small{color:rgba(255,255,255,.55);font-size:12px}
-.tray strong{display:block;font-size:14.5px;font-weight:600;line-height:1.25}
-.tray em{font-style:normal;font-weight:700}
-.remind{padding:14px 16px 16px}
-.remind label{font-size:13px;color:rgba(255,255,255,.7);display:block;margin-bottom:8px}
-.field{display:flex;gap:8px}
-.field input{flex:1;min-width:0;height:46px;border-radius:99px;border:1.5px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;padding:0 18px;font:inherit;font-size:15px}
-.field input::placeholder{color:rgba(255,255,255,.45)}
-.hand{font-family:var(--hand);color:var(--gold);font-size:25px;line-height:1;position:absolute;z-index:3;right:18px;top:50%;transform:rotate(-7deg);text-shadow:0 2px 8px #000}
-.ok{color:#7be0a2;font-size:13.5px;margin-top:8px;min-height:20px}
-
-.marquee{margin-top:72px;border-top:1px solid rgba(255,255,255,.1);padding:20px 0;overflow:hidden;white-space:nowrap}
-.marquee div{display:inline-block;animation:slide 48s linear infinite;font-family:var(--display);font-weight:700;font-size:20px;color:rgba(255,255,255,.55)}
-.marquee span{margin:0 22px}.marquee i{color:var(--red);font-style:normal}
-@keyframes slide{to{transform:translateX(-50%)}}
-
-/* how */
-.how{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px}
-.step b{font-family:var(--display);font-size:15px;color:var(--red);letter-spacing:.04em}
-.step h3{font-size:27px;font-weight:800;margin:10px 0 8px}
-.step p{color:var(--mute);font-size:15.5px}
-.define{margin-top:20px;background:var(--ink);color:#fff;border-radius:var(--r);padding:24px 28px;display:grid;grid-template-columns:auto 1fr;gap:8px 24px;align-items:center}
-.define dt{font-family:var(--display);font-weight:800;font-size:24px}
-.define dt small{display:block;font-family:var(--body);font-weight:500;font-size:12px;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase}
-.define dd{color:rgba(255,255,255,.8);font-size:16px;max-width:75ch}
-
-/* schedule */
-.tabs{display:flex;gap:8px;flex-wrap:wrap}
-.chip{height:40px;padding:0 18px;border-radius:99px;border:1.5px solid var(--line);background:#fff;font-size:14px;font-weight:600;color:var(--ink)}
-.chip[aria-pressed=true],.chip[aria-selected=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
-.rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(270px,1fr);gap:18px;overflow-x:auto;padding:4px 24px 18px;margin:0 -24px;scroll-snap-type:x mandatory;scrollbar-width:thin}
-.show{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;scroll-snap-align:start;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
-.show:hover{transform:translateY(-4px);box-shadow:0 18px 40px -22px rgba(0,0,0,.35)}
-.show .th{position:relative;aspect-ratio:16/10;background:var(--ink-3)}
-.show .th img{width:100%;height:100%;object-fit:cover}
-.st{position:absolute;top:10px;left:10px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 9px;border-radius:7px;background:#fff;color:var(--ink)}
-.st.today{background:var(--red);color:#fff}.st.replay{background:var(--ink);color:#fff}
-.show .bd{padding:16px 18px 18px;display:flex;flex-direction:column;gap:4px;flex:1}
-.show .when{font-size:13px;font-weight:600;color:var(--red)}
-.show h3{font-size:19px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
-.show .by{color:var(--mute);font-size:14px}
-.show .kind{font-size:12.5px;color:var(--mute);margin-top:6px}
-.show .btn{margin-top:14px;align-self:flex-start}
-
-/* categories */
-.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.cat{border-radius:var(--r);padding:22px;min-height:170px;display:flex;flex-direction:column;justify-content:space-between;background:var(--card);border:1px solid var(--line);transition:transform .2s,background .2s,color .2s}
-.cat:hover{transform:translateY(-3px);background:var(--ink);color:#fff}
-.cat h3{font-size:25px;font-weight:800}
-.cat p{font-size:14px;color:var(--mute)}.cat:hover p{color:rgba(255,255,255,.65)}
-.cat.big{grid-column:span 2;background:var(--red);color:#fff;border-color:var(--red)}
-.cat.big p{color:rgba(255,255,255,.85)}.cat.big:hover{background:var(--red-deep)}
-.genres{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px;align-items:center}
-.genres small{font-weight:600;color:var(--mute);margin-right:6px}
-
-/* products */
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.prod{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:flex;flex-direction:column}
-.prod .im{aspect-ratio:1;border-radius:12px;background:#F3EEE6;overflow:hidden;position:relative}
-.prod .im img{width:100%;height:100%;object-fit:contain;transition:transform .3s}
-.prod:hover .im img{transform:scale(1.05)}
-.badges{position:absolute;top:8px;left:8px;display:flex;gap:5px;flex-wrap:wrap}
-.bg{font-size:11px;font-weight:700;padding:4px 8px;border-radius:6px;background:var(--ink);color:#fff}
-.bg.sig{background:var(--gold);color:#2b2204;font-family:var(--hand);font-size:16px;line-height:1;padding:4px 9px 5px}
-.prod h3{font-family:var(--body);font-size:15px;font-weight:600;letter-spacing:0;line-height:1.3;margin-top:12px}
-.prod .by{font-size:13.5px;color:var(--mute);margin-top:2px}
-.prod .pr{font-weight:700;font-size:17px;margin:8px 0 12px;flex:1}
-.prod .pr s{color:var(--mute);font-weight:500;font-size:14px;margin-left:6px}
-.prod .btn{width:100%}
-
-/* bundle */
-.bundle{background:var(--ink);color:#fff;border-radius:28px;padding:44px;display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}
-.bundle h2{font-size:clamp(28px,3.6vw,44px)}
-.bundle .lede{color:rgba(255,255,255,.72)}
-.bundle .hero-im{border-radius:18px;overflow:hidden;aspect-ratio:16/10;margin-top:24px;background:var(--ink-3)}
-.bundle .hero-im img{width:100%;height:100%;object-fit:cover}
-.adds{display:grid;gap:10px}
-.add{display:grid;grid-template-columns:22px 56px 1fr auto;gap:14px;align-items:center;background:var(--ink-2);border:1.5px solid rgba(255,255,255,.1);border-radius:14px;padding:10px 14px;cursor:pointer;transition:border-color .15s,background .15s}
-.add:has(input:checked){border-color:var(--red);background:#241216}
-.add input{width:20px;height:20px;accent-color:var(--red)}
-.add img{width:56px;height:56px;border-radius:8px;object-fit:cover;background:#fff}
-.add strong{font-size:14.5px;font-weight:600;display:block;line-height:1.25}
-.add small{color:rgba(255,255,255,.55);font-size:12.5px}
-.add em{font-style:normal;font-weight:700}
-.ship{margin-top:18px}
-.ship p{font-size:14px;color:rgba(255,255,255,.8);margin-bottom:8px}
-.bar{height:8px;border-radius:99px;background:rgba(255,255,255,.14);overflow:hidden}
-.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--red),var(--gold));border-radius:99px;transition:width .4s}
-.total{display:flex;justify-content:space-between;align-items:center;margin-top:18px;gap:16px;flex-wrap:wrap}
-.total b{font-family:var(--display);font-size:30px}
-
-/* beyond */
-.beyond{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.by-card{border-radius:var(--r);overflow:hidden;background:var(--card);border:1px solid var(--line)}
-.by-card .th{aspect-ratio:16/10;background:var(--ink-3)}.by-card .th img{width:100%;height:100%;object-fit:cover}
-.by-card div.tx{padding:18px 20px 22px}
-.by-card h3{font-size:22px;font-weight:800}
-.by-card p{color:var(--mute);font-size:14.5px;margin-top:6px}
-.by-card a{display:inline-block;margin-top:12px;font-weight:600;font-size:14px;color:var(--red)}
-.by-card.txt{background:#F4E9E4;border-color:#ead9d2;display:flex;align-items:center}
-.by-card ul{list-style:none;padding:0;margin-top:12px;display:grid;gap:8px;font-size:14.5px}
-.by-card li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #e3d0c8;padding-bottom:8px}
-
-/* trust */
-.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:var(--r);background:#fff;overflow:hidden}
-.trust div{padding:26px 24px;border-right:1px solid var(--line)}
-.trust div:last-child{border:0}
-.trust h3{font-size:19px;font-weight:700;margin-bottom:6px}
-.trust p{font-size:14px;color:var(--mute)}
-.trust .sig{font-family:var(--hand);color:var(--red);font-size:28px;line-height:1;display:block;margin-bottom:8px}
-
-/* signup */
-.signup{background:var(--red);color:#fff;border-radius:28px;padding:56px 44px;text-align:center;position:relative;overflow:hidden}
-.signup h2{font-size:clamp(32px,5vw,58px)}
-.signup p{max-width:54ch;margin:14px auto 0;color:rgba(255,255,255,.9);font-size:17px}
-.picks{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:26px 0 22px}
-.pick{height:40px;padding:0 18px;border-radius:99px;border:1.5px solid rgba(255,255,255,.5);font-weight:600;font-size:14px;color:#fff}
-.pick[aria-pressed=true]{background:#fff;color:var(--red);border-color:#fff}
-.signup .field{max-width:460px;margin:0 auto}
-.signup .field input{background:#fff;color:var(--ink);border-color:#fff}
-.signup .field input::placeholder{color:#8a8590}
-.signup .btn{background:var(--ink);color:#fff}
-.signup .ok{color:#fff}
-
-/* faq */
-.faq{max-width:820px;margin:0 auto}
-.faq details{border-bottom:1px solid var(--line);padding:20px 0}
-.faq summary{font-family:var(--display);font-weight:700;font-size:21px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
-.faq summary::after{content:"+";color:var(--red);font-size:26px;line-height:1}
-.faq details[open] summary::after{content:"–"}
-.faq p{color:var(--mute);margin-top:10px;font-size:16px;max-width:68ch}
-
-/* sellers + footer */
-.sell{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;border:1px solid var(--line);background:#fff;border-radius:var(--r);padding:28px 32px}
-.sell h3{font-size:24px;font-weight:800}
-.sell p{color:var(--mute);font-size:15px;margin-top:4px}
-footer{background:var(--ink);color:rgba(255,255,255,.6);padding:44px 0;font-size:13.5px;margin-top:88px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
-
-/* cart drawer */
-.scrim{position:fixed;inset:0;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .25s;z-index:50}
-.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:#fff;z-index:51;transform:translateX(102%);transition:transform .3s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
-body.cart .scrim{opacity:1;pointer-events:auto}body.cart .drawer{transform:none}
-.drawer header{position:static;background:#fff;color:var(--ink);display:flex;justify-content:space-between;align-items:center;padding:20px 22px;border-bottom:1px solid var(--line)}
-.drawer h2{font-size:24px}
-.drawer .body{flex:1;overflow:auto;padding:18px 22px}
-.line{display:grid;grid-template-columns:60px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
-.line img{width:60px;height:60px;border-radius:8px;object-fit:contain;background:#F3EEE6}
-.line strong{font-size:14px;font-weight:600;display:block;line-height:1.25}
-.line small{color:var(--mute);font-size:12.5px}
-.line button{color:var(--mute);font-size:12.5px;text-decoration:underline}
-.xs h3{font-size:17px;font-weight:700;margin:22px 0 4px}
-.xs>small{color:var(--mute);font-size:13px}
-.drawer .ship p{color:var(--ink)}.drawer .bar{background:#eee7dc}
-.drawer .foot{padding:18px 22px;border-top:1px solid var(--line)}
-.drawer .foot .btn{width:100%;margin-top:12px}
-.drawer .foot small{display:block;text-align:center;color:var(--mute);margin-top:10px;font-size:12px}
-.empty{color:var(--mute);text-align:center;padding:48px 0}
-
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
-.reveal.in{opacity:1;transform:none}
-
-@media (max-width:980px){
-  .hero-grid,.bundle{grid-template-columns:1fr}
-  .nav nav{display:none}
-  .how,.beyond{grid-template-columns:1fr}
-  .cats,.grid{grid-template-columns:repeat(2,1fr)}
-  .trust{grid-template-columns:repeat(2,1fr)}.trust div:nth-child(2){border-right:0}.trust div:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .hand{display:none}
-  .define{grid-template-columns:1fr}
-}
-@media (max-width:560px){
-  section{padding:60px 0}.wrap{padding:0 16px}
-  .rail{padding:4px 16px 18px;margin:0 -16px;grid-auto-columns:78%}
-  .bundle,.signup{padding:28px 20px;border-radius:22px}
-  .grid{gap:12px}.prod{padding:10px}
-  .trust{grid-template-columns:1fr}.trust div{border-right:0;border-bottom:1px solid var(--line)}
-  .field{flex-direction:column}.field .btn{width:100%}
-  .add{grid-template-columns:22px 48px 1fr auto;gap:10px;padding:10px}.add img{width:48px;height:48px}
-  .proof{gap:22px}.concept span.long{display:none}
-  .logo{font-size:17px}.cartbtn{padding:0 12px}
-}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.chat span{opacity:1}h1 em path{stroke-dashoffset:0}}
-</style>
+<link rel="stylesheet" href="assets/site.css?v=1795033866">
 </head>
-<body>
-
-<div class="concept"><div class="wrap">
-  <span><b>Homepage concept</b> for TalkShopLive by Courtney Dean<span class="long"> · an independent redesign study, not the live site</span></span>
-  <button class="toggle" id="notesBtn" aria-pressed="false"><i></i>Show strategy notes</button>
-</div></div>
-
-<header><div class="wrap nav">
-  <a href="#top" class="logo" aria-label="TalkShopLive home"><span>TSL</span>TalkShopLive</a>
-  <nav aria-label="Main">
-    <a href="#drops" class="live">Live drops</a>
-    <a href="#shop">Signed music</a>
-    <a href="#shop">Signed books</a>
-    <a href="#bundle">Merch</a>
-    <a href="#beyond">Beauty &amp; more</a>
-    <a href="#how">How it works</a>
-  </nav>
-  <span class="sp"></span>
-  <button class="cartbtn" id="cartBtn" aria-label="Open cart">Cart<b id="cartCount">0</b></button>
-</div></header>
-
+<body data-page="home">
+<div id="chrome-top"></div>
 <main id="top">
 <!-- ================= HERO ================= -->
 <section class="hero dark">
@@ -314,8 +24,8 @@ body.cart .scrim{opacity:1;pointer-events:auto}body.cart .drawer{transform:none}
       <h1>Shop live with the artists you <em>love.<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 13 C40 3, 78 18, 112 9 S172 4, 197 11"/></svg></em></h1>
       <p class="sub">TalkShopLive is where musicians and authors go live to launch what they just made. <b>Watch the drop, ask them a question, and buy the signed copy right inside the video.</b></p>
       <div class="cta">
-        <a class="btn btn-red" href="#drops">See what's going live</a>
-        <a class="btn btn-ghost" href="#how">How it works</a>
+        <a class="btn btn-red pulse" href="live-drops.html"><i></i>See what's going live</a>
+        <a class="btn btn-ghost" href="how-it-works.html">How it works</a>
       </div>
       <div class="proof">
         <div><b>30</b>TalkShopLive authors made the NYT bestseller list in 2026</div>
@@ -350,6 +60,15 @@ body.cart .scrim{opacity:1;pointer-events:auto}body.cart .drawer{transform:none}
   <div class="marquee" aria-label="Artists and authors on TalkShopLive"><div id="marquee"></div></div>
 </section>
 
+<!-- ================= HOLIDAY ================= -->
+<section style="padding-bottom:0">
+  <aside class="note"><div><b>★</b><strong>The holiday sale, prominent without the clip art</strong><span>The current banner is a stock illustration that links to a plain list. Here the sale sits directly under the hero in its own color, shows four real gifts with prices, and leads to a gift guide organized the way people shop: by who the gift is for and by budget. Measure: banner click-through, sale page conversion, AOV.</span></div></aside>
+  <div class="wrap"><div class="holiday reveal">
+    <div><span class="script">Holiday Sale</span><h2>Signed, sealed, gifted.</h2><p>Autographed records and books make the gift nobody else thought of. Shop by who it's for, or by budget.</p><a class="btn" href="holiday-sale.html">Shop the gift guide</a></div>
+    <div class="gifts" data-gifts="duff,ree,foleycd,jsr3"></div>
+  </div></div>
+</section>
+
 <!-- ================= HOW ================= -->
 <section id="how">
   <aside class="note"><div><b>2</b><strong>Teach the model before the scroll</strong><span>First timers learn "watch, shop, signed" in three steps, and the vocabulary is fixed in one place. "Shows" reads like concerts, so the page calls them live drops and says plainly that some include a performance and all of them are shoppable.</span></div></aside>
@@ -360,6 +79,7 @@ body.cart .scrim{opacity:1;pointer-events:auto}body.cart .drawer{transform:none}
       <div class="step reveal"><b>02</b><h3>Shop inside the video</h3><p>Everything they hold up is one tap away. Add the signed copy, the exclusive color, or the merch without leaving the stream.</p></div>
       <div class="step reveal"><b>03</b><h3>Get it signed</h3><p>Autographed and limited editions ship to your door. Missed it live? The replay stays shoppable while copies last.</p></div>
     </div>
+    <div class="vidrow"><div class="reveal"><span class="eyebrow">See it in action</span><h3>This is what a live drop looks like.</h3><p>Artists and authors on camera, fans in the chat, and the signed copy one tap away.</p><a class="btn btn-line" href="live-drops.html">Browse live drops</a></div><div class="vid reveal"><video muted loop playsinline preload="metadata" src="https://assets.talkshop.live/uploads/TSL_SIZZLE_07_2025.mp4" aria-label="TalkShopLive highlights reel"></video><button type="button">🔇 Sound off</button></div></div>
     <dl class="define reveal"><dt><small>What's a</small>Live drop?</dt><dd>A live, shoppable video hosted by the person who made the thing. It can be a conversation, a performance or a demo. You can always buy what's on screen, during the drop or from the replay.</dd></dl>
   </div>
 </section>
@@ -369,7 +89,7 @@ body.cart .scrim{opacity:1;pointer-events:auto}body.cart .drawer{transform:none}
   <aside class="note"><div><b>3</b><strong>One schedule, three clear states</strong><span>"Live &amp; Upcoming Shows" mixed concerts, signings and brand streams with no labels. Every card now says when it is, who is hosting, what kind of drop it is and what you can do about it: remind me, or shop the replay. Each Remind me click is a contact tagged by artist for the reminder flow.</span></div></aside>
   <div class="wrap">
     <div class="sec-head reveal">
-      <div><span class="eyebrow">On the schedule</span><h2>Live drops this week</h2><p class="lede">Set a reminder and we'll nudge you before it starts. Replays stay shoppable after the drop ends.</p></div>
+      <div><span class="eyebrow">On the schedule</span><h2>Live drops this week</h2><p class="lede">Set a reminder and we'll nudge you before it starts. Replays stay shoppable after the drop ends. <a href="live-drops.html" style="color:var(--red);font-weight:600">See the full schedule →</a></p></div>
       <div class="tabs" role="tablist"><button class="chip" role="tab" aria-selected="true" data-tab="up">Live &amp; coming up</button><button class="chip" role="tab" aria-selected="false" data-tab="re">Replays you can still shop</button></div>
     </div>
     <div class="rail" id="rail"></div>
@@ -382,15 +102,15 @@ body.cart .scrim{opacity:1;pointer-events:auto}body.cart .drawer{transform:none}
   <div class="wrap">
     <div class="sec-head reveal"><div><span class="eyebrow">Shop the store</span><h2>Find your thing</h2></div></div>
     <div class="cats reveal">
-      <a class="cat big" href="https://talkshop.live/category/music" target="_blank" rel="noopener"><h3>Signed music</h3><p>Autographed vinyl, CDs and exclusive color variants you won't find anywhere else.</p></a>
-      <a class="cat" href="https://talkshop.live/category/books" target="_blank" rel="noopener"><h3>Signed books</h3><p>Memoirs, cookbooks and bestsellers, signed by the author.</p></a>
-      <a class="cat" href="#bundle"><h3>Artist merch</h3><p>Tees, hats and gifts from the bands you collect.</p></a>
-      <a class="cat" href="https://talkshop.live/category/beauty" target="_blank" rel="noopener"><h3>Beauty</h3><p>Skincare, makeup and fragrance, demoed live.</p></a>
-      <a class="cat" href="#beyond"><h3>Home &amp; kitchen</h3><p>Shop along with hosts and brands.</p></a>
+      <a class="cat big" href="signed-music.html"><h3>Signed music</h3><p>Autographed vinyl, CDs and exclusive color variants you won't find anywhere else.</p></a>
+      <a class="cat" href="signed-books.html"><h3>Signed books</h3><p>Memoirs, cookbooks and bestsellers, signed by the author.</p></a>
+      <a class="cat" href="merch.html"><h3>Artist merch</h3><p>Tees, hats and gifts from the bands you collect.</p></a>
+      <a class="cat" href="beauty.html"><h3>Beauty</h3><p>Skincare, makeup and fragrance, demoed live.</p></a>
+      <a class="cat" href="beauty.html#brands"><h3>Home &amp; kitchen</h3><p>Shop along with hosts and brands.</p></a>
       <a class="cat" href="https://talkshop.live/category/electronics" target="_blank" rel="noopener"><h3>Electronics</h3><p>Tech and gadgets from live demos.</p></a>
-      <a class="cat" href="#drops"><h3>Replays</h3><p>Missed it live? Watch and shop it now.</p></a>
+      <a class="cat" href="live-drops.html#replays"><h3>Replays</h3><p>Missed it live? Watch and shop it now.</p></a>
     </div>
-    <div class="genres reveal"><small>Music by genre</small><button class="chip">Country</button><button class="chip">Rock</button><button class="chip">Pop</button><button class="chip">Metal</button><button class="chip">Blues</button><button class="chip">Holiday</button></div>
+    <div class="genres reveal"><small>Music by genre</small><button class="chip" data-g="country">Country</button><button class="chip" data-g="rock">Rock</button><button class="chip" data-g="pop">Pop</button><button class="chip" data-g="holiday">Holiday</button></div>
   </div>
 </section>
 
@@ -398,8 +118,8 @@ body.cart .scrim{opacity:1;pointer-events:auto}body.cart .drawer{transform:none}
 <section style="padding-top:0">
   <aside class="note"><div><b>5</b><strong>Products that say why they're special</strong><span>The signed badge is the selling point, so it reads like a signature. Add to cart opens a cart that recommends more from the same artist first, not a generic bestseller. Try adding the Blackberry Smoke or Burn Eternal items. Measure: add-on rate, AOV against the $30 to $40 baseline.</span></div></aside>
   <div class="wrap">
-    <div class="sec-head reveal"><div><span class="eyebrow">Just dropped</span><h2>New signed arrivals</h2></div><a class="btn btn-line" href="https://talkshop.live/category/autographed" target="_blank" rel="noopener">Shop all signed</a></div>
-    <div class="grid" id="grid"></div>
+    <div class="sec-head reveal"><div><span class="eyebrow">Just dropped</span><h2>New signed arrivals</h2></div><a class="btn btn-line" href="signed-music.html">Shop all signed</a></div>
+    <div data-shelf data-ids="randy,sheryl,winter,duff,bbs2cd,sour,andy,burnlp"></div>
   </div>
 </section>
 
@@ -429,7 +149,7 @@ body.cart .scrim{opacity:1;pointer-events:auto}body.cart .drawer{transform:none}
     <div class="beyond">
       <div class="by-card txt reveal"><div class="tx"><h3>Beauty, live</h3><p>Skincare, makeup and fragrance from hosts who show you how it wears.</p>
         <ul><li><span>Biodance Bio-Collagen Real Deep Mask (4 pack)</span><b>$22.00</b></li><li><span>Lancer Mineral Sun Shield SPF 30</span><b>$48.00</b></li><li><span>Vintage Vixen "The Loren" lashes</span><b>$24.99</b></li></ul>
-        <a href="https://talkshop.live/category/beauty" target="_blank" rel="noopener">Shop beauty →</a></div></div>
+        <a href="beauty.html">Shop beauty →</a></div></div>
       <div class="by-card reveal"><div class="th"><img loading="lazy" alt="Fall on the Farm with Jimenez Sisters Ranch" src="https://assets.talkshop.live/thumbnail/f8028d02-660d-4c0c-bae5-0495e20d0df7.JPG"></div><div class="tx"><h3>Small-batch makers</h3><p>Jimenez Sisters Ranch goes live with seasonal gift sets like Vanilla Sugar and Pumpkin Spice Latte.</p><a href="https://talkshop.live/channels/jimenezsistersranch" target="_blank" rel="noopener">Visit the channel →</a></div></div>
       <div class="by-card reveal"><div class="th"><img loading="lazy" alt="Make Merry with Walmart" src="https://assets.talkshop.live/thumbnail/5ce1c116-ae2a-4448-88e0-703479cecca6.jpg"></div><div class="tx"><h3>Brands you know</h3><p>Walmart's Make Merry brings The Pioneer Woman home collection to a live holiday shop-along.</p><a href="https://talkshop.live/channels/walmart" target="_blank" rel="noopener">Visit the channel →</a></div></div>
     </div>
@@ -440,7 +160,7 @@ body.cart .scrim{opacity:1;pointer-events:auto}body.cart .drawer{transform:none}
 <section style="padding-top:0">
   <aside class="note"><div><b>8</b><strong>Answer the collector's doubts before checkout</strong><span>Collectors say trust is everything with signed goods, and some expected a signed cover and got a signed insert. Today "Autographed" has no proof on the page and shipping stays blank until checkout. Copy here is placeholder until policies are confirmed.</span></div></aside>
   <div class="wrap"><div class="trust reveal">
-    <div><span class="sig">Signed, for real</span><h3>By the artist's own hand</h3><p>Autographed items are signed by the artist or author, never a stamp.</p></div>
+    <div><span class="sig">Signed, for real</span><h3>Signed by the artist</h3><p>Autographed items are signed by the artist or author who made them.</p></div>
     <div><span class="sig">No surprises</span><h3>Know what's signed</h3><p>Cover, insert or bookplate. Every listing shows exactly what you get.</p></div>
     <div><span class="sig">Up front</span><h3>Shipping before checkout</h3><p>See the cost and the ship date on the product page, preorders included.</p></div>
     <div><span class="sig">Limited</span><h3>Small runs, real scarcity</h3><p>Exclusive colors and signed editions are gone when they're gone.</p></div>
@@ -453,10 +173,18 @@ body.cart .scrim{opacity:1;pointer-events:auto}body.cart .drawer{transform:none}
   <div class="wrap"><form class="signup reveal" data-form>
     <h2>Never miss a signed drop.</h2>
     <p>Pick what you love and we'll only send drops that match. Signed editions sell out, so alerts are how collectors get there first.</p>
-    <div class="picks" id="picks"><button type="button" class="pick" aria-pressed="true">Country</button><button type="button" class="pick" aria-pressed="false">Rock</button><button type="button" class="pick" aria-pressed="false">Pop</button><button type="button" class="pick" aria-pressed="true">Books</button><button type="button" class="pick" aria-pressed="false">Beauty</button><button type="button" class="pick" aria-pressed="false">Merch</button></div>
+    <div class="picks" ><button type="button" class="pick" aria-pressed="true">Country</button><button type="button" class="pick" aria-pressed="false">Rock</button><button type="button" class="pick" aria-pressed="false">Pop</button><button type="button" class="pick" aria-pressed="true">Books</button><button type="button" class="pick" aria-pressed="false">Beauty</button><button type="button" class="pick" aria-pressed="false">Merch</button></div>
     <div class="field"><input type="email" required placeholder="Email address" aria-label="Email address" autocomplete="email"><button class="btn">Send me drops</button></div>
     <div class="ok" role="status"></div>
   </form></div>
+</section>
+
+<!-- ================= LINER NOTES ================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="eyebrow">Liner Notes · the TalkShopLive magazine</span><h2>Stories behind the drops</h2></div><a class="btn btn-line" href="liner-notes.html">Read Liner Notes</a></div>
+    <div data-articles data-limit="3"></div>
+  </div>
 </section>
 
 <!-- ================= FAQ ================= -->
@@ -475,139 +203,13 @@ body.cart .scrim{opacity:1;pointer-events:auto}body.cart .drawer{transform:none}
 </section>
 
 <section style="padding:0">
-  <div class="wrap"><div class="sell reveal"><div><h3>Artist, author or brand?</h3><p>Go live to your fans and sell directly inside the video. The seller pitch lives here, so the rest of the page can speak to fans.</p></div><a class="btn btn-line" href="https://talkshop.live" target="_blank" rel="noopener">Sell on TalkShopLive</a></div></div>
+  <div class="wrap"><div class="sell reveal"><div><h3>Artist, author or brand?</h3><p>Go live to your fans and sell directly inside the video. The seller pitch lives here, so the rest of the page can speak to fans.</p></div><a class="btn btn-line" href="sell.html">Sell on TalkShopLive</a></div></div>
 </section>
 </main>
-
-<footer><div class="wrap"><span>Concept by Courtney Dean, November 2026. Product names, prices and show details were taken from public pages on talkshop.live and are shown for illustration. Not affiliated with or endorsed by TalkShopLive Inc.</span><a href="https://talkshop.live" target="_blank" rel="noopener" style="color:#fff;font-weight:600">Visit the live site →</a></div></footer>
-
-<!-- ================= CART ================= -->
-<div class="scrim" id="scrim"></div>
-<aside class="drawer" id="drawer" aria-label="Cart" aria-hidden="true">
-  <header><h2>Your cart</h2><button id="closeCart" aria-label="Close cart" style="font-size:26px;line-height:1">×</button></header>
-  <div class="body"><div id="lines"></div><div class="xs" id="xs"></div></div>
-  <div class="foot">
-    <div class="ship"><p id="cShipTxt"></p><div class="bar"><i id="cShipBar"></i></div></div>
-    <div class="total" style="margin-top:14px"><span style="font-weight:600">Subtotal</span><b id="cTotal" style="font-size:24px">$0.00</b></div>
-    <button class="btn btn-red" id="checkout">Checkout</button>
-    <small>Concept demo. Nothing is charged and nothing is saved.</small>
-  </div>
-</aside>
-
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"What is TalkShopLive?","acceptedAnswer":{"@type":"Answer","text":"TalkShopLive (TSL) is a live shopping platform where musicians, authors and creators host live videos and sell their newest releases, including signed vinyl, CDs, books, merch and exclusive editions, right inside the stream."}},
-{"@type":"Question","name":"What is a live drop? Is it a concert?","acceptedAnswer":{"@type":"Answer","text":"A live drop is a shoppable live video. Some artists perform, some tell the story behind the release, and all of them take fan questions. Everything on screen can be bought during the drop."}},
-{"@type":"Question","name":"What if I miss the live?","acceptedAnswer":{"@type":"Answer","text":"Replays stay on the site and remain shoppable while items are in stock."}}]}
-</script>
-
-<script>
-const C='https://cdn.talkshop.live/eyJidWNrZXQiOiJ0c2wtaW1hZ2VzLXByb2R1Y3Rpb24iLCJrZXkiOiJ2YXJpYW50X2ltYWdlcy8', T='https://assets.talkshop.live/thumbnail/', S='https://talkshop.live';
-const K=k=>'https://cdn.talkshop.live/'+btoa(JSON.stringify({bucket:'tsl-images-production',key:'variant_images/'+k,edits:{resize:{width:600,fit:'contain'}}}));
-const FREE=75, $=s=>document.querySelector(s), money=n=>'$'+n.toFixed(2);
-
-// Catalog. Names, prices and tags as listed on talkshop.live, November 2026.
-const P={
- randy:{n:'Same Old Way, CD Signed',a:'Randy Travis',p:15.98,t:['Preorder'],s:1,i:C+'4MzAwNzgyL29yaWdpbmFsL2Ftc3RzbC1zYW1lLW9sZC13YXktY2Qtc2lnbmVkLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NjAwLCJmaXQiOiJjb250YWluIn19fQ==',u:'/product/4ewSvMs-ma9O/same-old-way-cd-signed'},
- sheryl:{n:'Pick You Up, Oriole & Black Swirl LP Signed',a:'Sheryl Crow',p:28.98,t:[],s:1,i:C+'4MTEyMTU1L29yaWdpbmFsL2Ftc3RzbC1waWNrLXlvdS11cC1vcmlvbGUtYmxhY2stc3dpcmwtbHAtZXhjbHVzaXZlLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjYwMCwiZml0IjoiY29udGFpbiJ9fX0=',u:'/product/_JNUx7VBCiUZ/pick-you-up-oriole-black-swirl-lp-signed'},
- winter:{n:"Winterlicious (D'Luxe), LP Signed",a:'Debbie Gibson',p:31.98,t:['Preorder'],s:1,i:C+'4MzAzMzUyL29yaWdpbmFsL2Ftc3RzbC13aW50ZXJsaWNpb3VzLWQtbHV4ZS1scC1zaWduZWQucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2MDAsImZpdCI6ImNvbnRhaW4ifX19',u:'/product/fsWStKStr6WD/winterlicious-d-luxe-lp-signed'},
- duff:{n:'Holiday Things, Exclusive Sugarplum Glitter Alt Cover LP',a:'Hilary Duff',p:28.98,t:['Preorder','Exclusive'],s:0,i:C+'4MzA0MTgzL29yaWdpbmFsL2Ftc3RzbC1ob2xpZGF5LXRoaW5ncy1leGNsdXNpdmUtc3VnYXJwbHVtLWdsaXR0ZXItYWx0LWNvdmVyLWxwLnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NjAwLCJmaXQiOiJjb250YWluIn19fQ==',u:'/product/1D267T5woA30/holiday-things-exclusive-sugarplum-glitter-alt-cover-lp'},
- sour:{n:'The Sourdough Hoe, Signed',a:'Angela Sincore',p:29.99,t:['Preorder'],s:1,book:1,i:C+'4MTUzMzQ3L29yaWdpbmFsL3JlYWRlcmxpbmstdGhlLXNvdXJkb3VnaC1ob2Utc2lnbmVkLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NjAwLCJmaXQiOiJjb250YWluIn19fQ==',u:'/product/KUgU_jpZ3gtM/the-sourdough-hoe-signed'},
- tmi:{n:'TMI: Memoirs of a Go-Go, Signed',a:'Jane Wiedlin',p:35.00,w:37.50,t:[],s:1,book:1,i:C+'3ODA3MTYzL29yaWdpbmFsL3JlYWRlcmxpbmstdG1pLW1lbW9pcnMtb2YtYS1nby1nby1zaWduZWQuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2MDAsImZpdCI6ImNvbnRhaW4ifX19',u:'/product/-QUFF18MoWyD/tmi-memoirs-of-a-go-go-signed'},
- andy:{n:"Andy's Bravo Scrapbook, Signed",a:'Andy Cohen',p:38.00,t:['Preorder'],s:1,book:1,i:C+'4Mjg5OTk1L29yaWdpbmFsL3JlYWRlcmxpbmstYW5keS1zLWJyYXZvLXNjcmFwYm9vay1zaWduZWQuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2MDAsImZpdCI6ImNvbnRhaW4ifX19',u:'/product/_v5hCAY-sVEQ/andy-s-bravo-scrapbook-signed-9d077168'},
- burnlp:{n:'Burn Eternal, LP Signed',a:'Burn Eternal',p:37.98,t:['Preorder'],s:1,i:C+'4Mjk3MTkyL29yaWdpbmFsL2Ftc3RzbC1idXJuLWV0ZXJuYWwtbHAtc2lnbmVkLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NjAwLCJmaXQiOiJjb250YWluIn19fQ==',u:'/product/ggqAnotLhZ7T/burn-eternal-lp-signed'},
- burncd:{n:'Burn Eternal, CD Signed',a:'Burn Eternal',p:16.98,t:['Preorder'],s:1,i:C+'4Mjk3MTkwL29yaWdpbmFsL2Ftc3RzbC1idXJuLWV0ZXJuYWwtY2Qtc2lnbmVkLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NjAwLCJmaXQiOiJjb250YWluIn19fQ==',u:'/product/1DgPLHJD4bfR/burn-eternal-cd-signed'},
- dgbook:{n:'Eternally Electric: The Message in My Music, Signed',a:'Debbie Gibson',p:30.00,t:[],s:1,book:1,i:K('8303353/original/readerlink-eternally-electric-the-message-in-my-music-signed.jpg'),u:'/product/z5BXcXmEvqEb/eternally-electric-the-message-in-my-music-signed'},
- dgbody:{n:'The Body Remembers, CD with Autograph',a:'Debbie Gibson',p:31.98,t:[],s:1,i:K('7035384/original/ingramentertainment-the-body-remembers-autographed-cd.jpg'),u:'/channels/debbiegibson'},
- sherylcd:{n:'Pick You Up, CD',a:'Sheryl Crow',p:13.98,t:[],s:0,i:K('8112154/original/amstsl-pick-you-up-cd.jpeg'),u:'/channels/sherylcrow'},
- garth:{n:'Double LIVE, LP',a:'Garth Brooks',p:14.97,t:[],s:0,i:K('8299896/original/amstsl-double-live-lp.jpg'),u:'/product/7SCpBiHiIoKW/double-live-lp'},
- bbs2cd:{n:'Rattle Ramble and Roll, Signed 2CD Set',a:'Blackberry Smoke',p:29.99,t:['Limited'],s:1,i:C+'4MzAzNjEyL29yaWdpbmFsL2JsYWNrYmVycnlzbW9rZS1yYXR0bGUtcmFtYmxlLWFuZC1yb2xsLWNkLXNpZ25lZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjYwMCwiZml0IjoiY29udGFpbiJ9fX0=',u:'/product/_IU38T6a67x4/rattle-ramble-and-roll-signed-2cd-set-limited-first-ever-best-of'},
- bbshat:{n:'25th Anniversary Hat',a:'Blackberry Smoke',p:29.99,t:[],s:0,merch:1,i:C+'4MzAxMjY4L29yaWdpbmFsL2JsYWNrYmVycnlzbW9rZS0yNXRoLWFubml2ZXJzYXJ5LWhhdC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjYwMCwiZml0IjoiY29udGFpbiJ9fX0=',u:'/channels/blackberrysmoke'},
- bbsbadge:{n:'25th Anniversary Auto Badge',a:'Blackberry Smoke',p:29.99,t:[],s:0,merch:1,i:C+'4MzAxMjY2L29yaWdpbmFsL2JsYWNrYmVycnlzbW9rZS0yNXRoLWFubml2ZXJzYXJ5LWF1dG8tYmFkZ2UuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2MDAsImZpdCI6ImNvbnRhaW4ifX19',u:'/channels/blackberrysmoke'},
- bbstee:{n:'25th Anniversary World Tour T-shirt',a:'Blackberry Smoke',p:35.00,t:[],s:0,merch:1,i:C+'4MzA1MTM0L29yaWdpbmFsL2JsYWNrYmVycnlzbW9rZS1iYnMtMjV0aC1hbm5pdmVyc2FyeS13b3JsZC10b3VyLXQtc2hpcnQuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2MDAsImZpdCI6ImNvbnRhaW4ifX19',u:'/channels/blackberrysmoke'},
- bbssweater:{n:'Ugly Knit Christmas Sweater',a:'Blackberry Smoke',p:69.99,t:[],s:0,merch:1,i:C+'4MzAxMjY5L29yaWdpbmFsL2JsYWNrYmVycnlzbW9rZS11Z2x5LWtuaXQtY2hyaXN0bWFzLXN3ZWF0ZXIuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2MDAsImZpdCI6ImNvbnRhaW4ifX19',u:'/channels/blackberrysmoke'}
-};
-const G={randy:['country'],garth:['country'],bbs2cd:['rock','country'],sheryl:['rock','pop'],sherylcd:['rock','pop'],winter:['pop','holiday'],dgbody:['pop'],duff:['pop','holiday'],burnlp:['rock'],burncd:['rock'],sour:['food'],tmi:['memoir','pop'],andy:['memoir'],dgbook:['memoir','pop']};
-const GRID=['randy','sheryl','winter','duff','bbs2cd','sour','andy','burnlp'];
-
-const SHOWS={up:[
- {st:'Tonight',cls:'today',w:'Wed Nov 18 · 7:00 PM',t:'A Charlie Brown Christmas, Signed',by:'Vince Guaraldi Trio',k:'Signed music drop',img:'a520c1a7-83ad-4ceb-9640-51ab486e6dce.jpg',u:'/watch/-M2FKpbkeKsp'},
- {st:'Tonight',cls:'today',w:'Wed Nov 18 · 7:00 PM',t:'Make Merry',by:'Walmart',k:'Brand shop-along · home',img:'5ce1c116-ae2a-4448-88e0-703479cecca6.jpg',u:'/channels/walmart'},
- {st:'Tomorrow',w:'Thu Nov 19 · 8:30 PM',t:"Winterlicious (D'Luxe), Signed",by:'Debbie Gibson',k:'Signed music drop',img:'64b402d2-0e06-4386-9331-1479f0f5f646.png',u:'/watch/7PPuDP0SCmZx'},
- {st:'Fri',w:'Fri Nov 20 · 6:00 PM',t:'Sauce Life, Signed',by:'Richard & Jazmin Blais',k:'Signed book drop',img:'f75b9d52-ba5b-4ed5-8c05-ed8b98bd2e55.jpg',u:'/watch/jzAziJls_c4Q'},
- {st:'Fri',w:'Fri Nov 20 · 7:00 PM',t:"Of Course It's Good!, Signed",by:'Jessica Secrest',k:'Signed book drop',img:'70013993-8b01-4287-94a1-cbd0a325bc9a.jpg',u:'/watch/-9TMbkFD9ewi'},
- {st:'Mon',w:'Mon Nov 23 · 8:30 PM',t:'The Last Duet, Signed',by:'Dan Seals',k:'Signed music drop',img:'d22e9af3-f4db-4549-ba92-1e9220379556.jpg',u:'/watch/SdbijS879nFL'},
- {st:'Tue',w:'Tue Nov 24 · 9:00 PM',t:'Alone (Together), Signed',by:'Sue Foley',k:'Signed music drop',img:'0f0ee44f-d019-4028-b974-0fdd3ce81bf4.jpg',u:'/watch/e02Qjxv8lDtR'},
- {st:'Dec 9',w:'Wed Dec 9 · 7:00 PM',t:'Same Old Way, Signed',by:'Randy Travis',k:'Signed music drop',img:'21289aa3-d3da-4e8d-96ae-a2ccb66fcefd.png',u:'/watch/2frXrNqcbtni'}
-],re:[
- {st:'Replay',cls:'replay',w:'139.5K watched',t:'The Sourdough Hoe, Signed',by:'Angela Sincore',k:'Signed book drop',img:'81037108-8566-4e46-946f-cb9dbb34d4b9.jpg',u:'/watch/0b6KL4JCwnAD'},
- {st:'Replay',cls:'replay',w:'109.5K watched',t:'25 Years of Blackberry Smoke: A Celebration',by:'Blackberry Smoke',k:'Signed music drop + merch',img:'7987557b-5710-4fc3-97e9-afcde08379ea.jpg',u:'/channels/blackberrysmoke'},
- {st:'Replay',cls:'replay',w:'24.3K watched',t:'Night Divides The Day, Signed',by:'The Doors',k:'Signed music drop',img:'5fc7751f-9322-4686-8293-95ec279952e2.jpg',u:'/watch/nOaK-Rub1XJh'},
- {st:'Replay',cls:'replay',w:'6.3K watched',t:'Pick You Up, Signed',by:'Sheryl Crow',k:'Signed music drop',img:'c3276338-985b-4e39-ba22-00fd20f9741a.jpg',u:'/watch/WqEU09JaEvnd'}
-]};
-
-// ---------- render
-$('#heroImg').src=P.winter.i;
-$('#marquee').innerHTML=Array(2).fill(['Garth Brooks','Sheryl Crow','Randy Travis','The Doors','Andy Cohen','Debbie Gibson','Hilary Duff','Foreigner','Blackberry Smoke','Clutch','Jane Wiedlin','Elin Hilderbrand','Extreme','Tommy James'].map(n=>`<span>${n}</span><i>✦</i>`).join('')).join('');
-
-function rail(tab){
-  $('#rail').innerHTML=SHOWS[tab].map(s=>`<article class="show"><a class="th" href="${S+s.u}" target="_blank" rel="noopener"><img loading="lazy" alt="${s.t} with ${s.by}" src="${T+s.img}"><span class="st ${s.cls||''}">${s.st}</span></a>
-  <div class="bd"><span class="when">${s.w}</span><h3>${s.t}</h3><span class="by">with ${s.by}</span><span class="kind">${s.k}</span>
-  ${tab==='up'?`<button class="btn btn-line btn-sm" data-remind>Remind me</button>`:`<a class="btn btn-red btn-sm" href="${S+s.u}" target="_blank" rel="noopener">Watch &amp; shop replay</a>`}</div></article>`).join('');
-}
-rail('up');
-document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.setAttribute('aria-selected',x===b));rail(b.dataset.tab)});
-$('#rail').addEventListener('click',e=>{const b=e.target.closest('[data-remind]');if(b){b.textContent='✓ Reminder set';b.classList.replace('btn-line','btn-red');b.disabled=true}});
-
-$('#grid').innerHTML=GRID.map(id=>{const p=P[id];return `<article class="prod reveal"><a class="im" href="${S+p.u}" target="_blank" rel="noopener"><img loading="lazy" alt="${p.n} by ${p.a}" src="${p.i}"><span class="badges">${p.s?'<span class="bg sig">Signed</span>':''}${p.t.map(t=>`<span class="bg">${t}</span>`).join('')}</span></a>
-<h3>${p.n}</h3><span class="by">${p.a}</span><div class="pr">${money(p.p)}${p.w?`<s>${money(p.w)}</s>`:''}</div><button class="btn btn-line btn-sm" data-add="${id}">Add to cart</button></article>`}).join('');
-
-// ---------- bundle
-const BUNDLE=['bbs2cd','bbshat','bbsbadge','bbstee','bbssweater'];
-$('#adds').innerHTML=BUNDLE.map((id,i)=>{const p=P[id];return `<label class="add"><input type="checkbox" value="${id}" ${i<2?'checked':''}><img loading="lazy" alt="" src="${p.i}"><span><strong>${p.n}</strong><small>${p.s?'Signed by the band':p.p>35?'From '+money(p.p):'Official merch'}</small></span><em>${money(p.p)}</em></label>`}).join('');
-function shipText(total){return total>=FREE?'🎉 You unlocked free shipping':total>0?`You're ${money(FREE-total)} away from free shipping`:`Free shipping on orders over $${FREE}`}
-function bundle(){const ids=[...document.querySelectorAll('#adds input:checked')].map(i=>i.value),t=ids.reduce((s,i)=>s+P[i].p,0);
-  $('#bTotal').textContent=money(t);$('#bShipTxt').textContent=shipText(t);$('#bShipBar').style.width=Math.min(100,t/FREE*100)+'%';return ids}
-$('#adds').onchange=bundle;bundle();
-$('#bAdd').onclick=()=>{bundle().forEach(id=>{if(!cart.includes(id))cart.push(id)});draw();open()};
-
-// ---------- cart with artist-first cross-sell
-let cart=[];
-function suggest(){const have=new Set(cart),keys=Object.keys(P).filter(k=>!have.has(k)),last=P[cart[cart.length-1]];
-  if(!last)return {artist:[],similar:[]};
-  // 1. Same artist, most recently added first, merch ahead of other formats
-  const artists=[...new Set(cart.map(i=>P[i].a))].reverse();
-  const artist=artists.flatMap(a=>keys.filter(k=>P[k].a===a).sort((x,y)=>(P[y].merch||0)-(P[x].merch||0))).slice(0,3);
-  // 2. Similar: shared genre with anything in the cart, then same format
-  const mine=new Set(cart.flatMap(i=>G[i]||[])),inCart=new Set(artists);
-  const similar=keys.filter(k=>!inCart.has(P[k].a)&&!P[k].merch).map(k=>({k,sc:(G[k]||[]).filter(g=>mine.has(g)).length*2+(!!P[k].book===!!last.book?1:0)})).filter(x=>x.sc>0).sort((x,y)=>y.sc-x.sc).slice(0,3).map(x=>x.k);
-  return {artist,similar,name:artist[0]?P[artist[0]].a:last.a}}
-function draw(){const t=cart.reduce((s,i)=>s+P[i].p,0);
-  $('#cartCount').textContent=cart.length;
-  $('#lines').innerHTML=cart.length?cart.map(id=>`<div class="line"><img alt="" src="${P[id].i}"><div><strong>${P[id].n}</strong><small>${P[id].a}</small></div><div style="text-align:right"><b>${money(P[id].p)}</b><br><button data-rm="${id}">Remove</button></div></div>`).join(''):'<p class="empty">Your cart is empty.<br>Add something signed.</p>';
-  const s=suggest(),row=id=>`<div class="line"><img alt="" src="${P[id].i}"><div><strong>${P[id].n}</strong><small>${P[id].merch?'Official merch':(P[id].s?'Signed · ':'')+P[id].a}</small></div><button class="btn btn-line btn-sm" style="text-decoration:none;color:var(--ink)" data-add="${id}">+ ${money(P[id].p)}</button></div>`;
-  $('#xs').innerHTML=(s.artist.length?`<h3>More from ${s.name}</h3><small>Add-ons from the same artist ship together.</small>`+s.artist.map(row).join(''):'')+(s.similar.length?`<h3>Fans also add</h3><small>Similar signed releases, picked from what's in your cart.</small>`+s.similar.map(row).join(''):'');
-  $('#cTotal').textContent=money(t);$('#cShipTxt').textContent=shipText(t);$('#cShipBar').style.width=Math.min(100,t/FREE*100)+'%'}
-function open(){document.body.classList.add('cart');$('#drawer').setAttribute('aria-hidden','false')}
-function close(){document.body.classList.remove('cart');$('#drawer').setAttribute('aria-hidden','true')}
-document.addEventListener('click',e=>{const a=e.target.closest('[data-add]'),r=e.target.closest('[data-rm]');
-  if(a){if(!cart.includes(a.dataset.add))cart.push(a.dataset.add);draw();open()}
-  if(r){cart=cart.filter(i=>i!==r.dataset.rm);draw()}});
-$('#cartBtn').onclick=open;$('#closeCart').onclick=close;$('#scrim').onclick=close;
-document.addEventListener('keydown',e=>e.key==='Escape'&&close());
-$('#checkout').onclick=()=>{$('#checkout').textContent='This is a concept. Checkout happens on talkshop.live'};
-draw();
-
-// ---------- forms, picks, notes, countdown, reveal
-document.querySelectorAll('[data-form]').forEach(f=>f.onsubmit=e=>{e.preventDefault();f.querySelector('.ok').textContent="You're on the list. (Concept demo: no email was collected.)";f.querySelector('input').value=''});
-$('#picks').onclick=e=>{const b=e.target.closest('.pick');if(b)b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true')};
-document.querySelectorAll('.genres .chip').forEach(c=>c.onclick=()=>c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')!=='true'));
-$('#notesBtn').onclick=()=>{const on=document.body.classList.toggle('notes');$('#notesBtn').setAttribute('aria-pressed',on)};
-if(location.hash==='#notes')$('#notesBtn').click();
-const dropAt=new Date(2026,10,19,20,30);
-(function tick(){const d=dropAt-Date.now();if(d>0){const h=Math.floor(d/36e5),m=Math.floor(d%36e5/6e4),s=Math.floor(d%6e4/1e3);$('#countdown').textContent=h>47?`Thu Nov 19 · 8:30 PM`:`Live in ${h}h ${String(m).padStart(2,'0')}m ${String(s).padStart(2,'0')}s`;setTimeout(tick,1000)}else{$('#countdown').textContent='Replay available';document.querySelector('.tag').textContent='Latest drop'}})();
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-</script>
+<div id="chrome-bottom"></div>
+<script src="assets/site.js?v=1795033866"></script>
+<script src="assets/pages.js?v=1795033866"></script>
+<script src="assets/notes.js?v=1795033866"></script>
+<script src="assets/popups.js?v=1795033866"></script>
 </body>
 </html>

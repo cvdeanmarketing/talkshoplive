@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My account | TalkShopLive</title>
+<meta name="description" content="Your TalkShopLive account: following, reminders, orders and alert settings.">
+<!-- Concept redesign, not the production site. Keep it out of search results. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=1795033866">
+</head>
+<body data-page="account">
+<div id="chrome-top"></div>
+<main><section class="phero "><div class="wrap">
+  <div class="crumb"><a href="index.html">Home</a> / My account</div>
+  <h1>Hi, Demo Fan.</h1><p>This is what a signed-in fan sees: who they follow, what is coming up, their orders, and control over every alert.</p><div class="cta"><button class="btn btn-ghost" data-signout>Sign out of demo</button></div>
+</div></section>
+<section class="tight"><aside class="note"><div><b>1</b><strong>Follow and Notify are different promises</strong><span>Today the only option on an artist page is Notify me, and the account has no following list or alert settings, so a fan who gets one alert too many can only unsubscribe from everything. Splitting quiet Follow from opt-in Notify, with per-artist toggles and a pause, protects the contact list. Each toggle maps to a HubSpot subscription type.</span></div></aside>
+<div class="wrap dash">
+  <nav class="side-nav" aria-label="Account"><a class="on" href="#following">Following</a><a href="#reminders">Reminders</a><a href="#orders">Orders</a><a href="#alerts">Alert settings</a><a href="#foryou">For you</a><button data-signout>Sign out</button></nav>
+  <div>
+    <div class="panel" id="following"><h2>Following</h2><p>Following shapes what you see. Notify me sends an alert when that artist goes live.</p>
+      <div class="rowi"><img alt="" src="https://assets.talkshop.live/thumbnail/64b402d2-0e06-4386-9331-1479f0f5f646.png"><div><strong>Debbie Gibson</strong><small>Goes live Thu Nov 19 · 8:30 PM</small></div><div class="sw" data-switch><button aria-pressed="true">Following</button><button class="n" aria-pressed="true">🔔 Notify me</button></div></div><div class="rowi"><img alt="" src="https://assets.talkshop.live/thumbnail/7987557b-5710-4fc3-97e9-afcde08379ea.jpg"><div><strong>Blackberry Smoke</strong><small>Replay available · new merch</small></div><div class="sw" data-switch><button aria-pressed="true">Following</button><button class="n" aria-pressed="false">🔔 Notify me</button></div></div><div class="rowi"><img alt="" src="https://assets.talkshop.live/thumbnail/21289aa3-d3da-4e8d-96ae-a2ccb66fcefd.png"><div><strong>Randy Travis</strong><small>Goes live Wed Dec 9 · 7:00 PM</small></div><div class="sw" data-switch><button aria-pressed="true">Following</button><button class="n" aria-pressed="true">🔔 Notify me</button></div></div><div class="rowi"><img alt="" src="https://assets.talkshop.live/thumbnail/c3276338-985b-4e39-ba22-00fd20f9741a.jpg"><div><strong>Sheryl Crow</strong><small>Replay available</small></div><div class="sw" data-switch><button aria-pressed="true">Following</button><button class="n" aria-pressed="false">🔔 Notify me</button></div></div>
+    </div>
+    <div class="panel" id="reminders"><h2>Your reminders</h2><p>We'll send one message an hour before each drop, and the replay afterwards if you miss it.</p>
+      <div data-drops="up" data-idx="3,10" data-rail></div>
+    </div>
+    <div class="panel" id="orders"><h2>Orders <span class="sample">Sample data</span></h2><p>Signed items and preorders, with what is signed and when it ships.</p>
+      <div class="rowi" data-order="sheryl"></div><div class="rowi" data-order="sour"></div>
+    </div>
+    <div class="panel" id="alerts"><h2>Alert settings</h2><p>Choose how you hear from us. Turn down the volume without losing your artists.</p>
+      <div class="rowi" style="grid-template-columns:1fr auto"><div><strong>Live drop reminders</strong><small>When an artist you've turned Notify on for is about to go live</small></div><div class="sw" data-switch><button aria-pressed="true">Email</button><button aria-pressed="true">Text</button></div></div>
+      <div class="rowi" style="grid-template-columns:1fr auto"><div><strong>New signed arrivals</strong><small>Weekly, only for the genres you pick</small></div><div class="sw" data-switch><button aria-pressed="true">Email</button><button aria-pressed="false">Text</button></div></div>
+      <div class="rowi" style="grid-template-columns:1fr auto"><div><strong>Back in stock</strong><small>For items you tried to buy that sold out</small></div><div class="sw" data-switch><button aria-pressed="true">Email</button><button aria-pressed="false">Text</button></div></div>
+      <div class="rowi" style="grid-template-columns:1fr auto"><div><strong>Need a break?</strong><small>Pause everything for 30 days. Your follows stay put.</small></div><div class="sw" data-switch><button aria-pressed="false">Pause alerts</button></div></div>
+    </div>
+    <div class="panel" id="foryou"><h2>Picked for you</h2><p>Based on the artists you follow.</p><div data-shelf data-ids="dgbook,bbshat,garth,dgbody"></div></div>
+  </div>
+</div></section></main>
+<div id="chrome-bottom"></div>
+<script src="assets/site.js?v=1795033866"></script>
+<script src="assets/pages.js?v=1795033866"></script>
+<script src="assets/notes.js?v=1795033866"></script>
+<script src="assets/popups.js?v=1795033866"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<main id="top">
+<!-- ================= HERO ================= -->
+<section class="hero dark">
+  <aside class="note"><div><b>1</b><strong>A five second answer to "what is this?"</strong><span>Today's homepage opens on a sale banner, so a cold visitor never learns that the artist is in the video. The headline says who TalkShopLive is, the player shows how it works, and the reminder form turns a curious click into a contact. Measure: bounce rate, email capture rate.</span></div></aside>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill">Live shopping with artists, authors and creators</span>
+      <h1>Shop live with the artists you <em>love.<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 13 C40 3, 78 18, 112 9 S172 4, 197 11"/></svg></em></h1>
+      <p class="sub">TalkShopLive is where musicians and authors go live to launch what they just made. <b>Watch the drop, ask them a question, and buy the signed copy right inside the video.</b></p>
+      <div class="cta">
+        <a class="btn btn-red" href="#drops">See what's going live</a>
+        <a class="btn btn-ghost" href="#how">How it works</a>
+      </div>
+      <div class="proof">
+        <div><b>30</b>TalkShopLive authors made the NYT bestseller list in 2026</div>
+        <div><b>139.5K</b>fans watched a single recent drop</div>
+        <div><b>Signed</b>vinyl, CDs and books starting around $15</div>
+      </div>
+    </div>
+    <div class="player" id="player">
+      <span class="hand">signed by her ↓</span>
+      <div class="screen">
+        <span class="tag">Next live drop</span>
+        <span class="count" id="countdown">Thu Nov 19 · 8:30 PM</span>
+        <img alt="Debbie Gibson live drop for Winterlicious (D'Luxe)" src="https://assets.talkshop.live/thumbnail/64b402d2-0e06-4386-9331-1479f0f5f646.png">
+        <div class="chat" aria-hidden="true">
+          <span><b>Jamie</b>Is the red vinyl signed too?</span>
+          <span><b>Marcus</b>Grabbed mine. Gift sorted 🎁</span>
+          <span><b>Priya</b>Tell the story behind track 3!</span>
+        </div>
+      </div>
+      <div class="tray">
+        <img alt="" id="heroImg">
+        <div><small>Debbie Gibson · shop it during the drop</small><strong>Winterlicious (D'Luxe) LP, Signed</strong></div>
+        <button class="btn btn-red btn-sm" data-add="winter"><em>$31.98</em>&nbsp;Add</button>
+      </div>
+      <form class="remind" data-form>
+        <label for="e1">Get a reminder before Debbie goes live</label>
+        <div class="field"><input id="e1" type="email" required placeholder="Email address" autocomplete="email"><button class="btn btn-red">Remind me</button></div>
+        <div class="ok" role="status"></div>
+      </form>
+    </div>
+  </div>
+  <div class="marquee" aria-label="Artists and authors on TalkShopLive"><div id="marquee"></div></div>
+</section>
+
+<!-- ================= HOW ================= -->
+<section id="how">
+  <aside class="note"><div><b>2</b><strong>Teach the model before the scroll</strong><span>First timers learn "watch, shop, signed" in three steps, and the vocabulary is fixed in one place. "Shows" reads like concerts, so the page calls them live drops and says plainly that some include a performance and all of them are shoppable.</span></div></aside>
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="eyebrow">How it works</span><h2>Part record store signing,<br>part front row.</h2></div></div>
+    <div class="how">
+      <div class="step reveal"><b>01</b><h3>Watch the drop</h3><p>An artist or author goes live to share something new. Some talk, some play a few songs, all of them answer fans in the chat.</p></div>
+      <div class="step reveal"><b>02</b><h3>Shop inside the video</h3><p>Everything they hold up is one tap away. Add the signed copy, the exclusive color, or the merch without leaving the stream.</p></div>
+      <div class="step reveal"><b>03</b><h3>Get it signed</h3><p>Autographed and limited editions ship to your door. Missed it live? The replay stays shoppable while copies last.</p></div>
+    </div>
+    <dl class="define reveal"><dt><small>What's a</small>Live drop?</dt><dd>A live, shoppable video hosted by the person who made the thing. It can be a conversation, a performance or a demo. You can always buy what's on screen, during the drop or from the replay.</dd></dl>
+  </div>
+</section>
+
+<!-- ================= SCHEDULE ================= -->
+<section id="drops" style="padding-top:0">
+  <aside class="note"><div><b>3</b><strong>One schedule, three clear states</strong><span>"Live &amp; Upcoming Shows" mixed concerts, signings and brand streams with no labels. Every card now says when it is, who is hosting, what kind of drop it is and what you can do about it: remind me, or shop the replay. Each Remind me click is a contact tagged by artist for the reminder flow.</span></div></aside>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="eyebrow">On the schedule</span><h2>Live drops this week</h2><p class="lede">Set a reminder and we'll nudge you before it starts. Replays stay shoppable after the drop ends.</p></div>
+      <div class="tabs" role="tablist"><button class="chip" role="tab" aria-selected="true" data-tab="up">Live &amp; coming up</button><button class="chip" role="tab" aria-selected="false" data-tab="re">Replays you can still shop</button></div>
+    </div>
+    <div class="rail" id="rail"></div>
+  </div>
+</section>
+
+<!-- ================= SHOP BY ================= -->
+<section id="shop" style="padding-top:20px">
+  <aside class="note"><div><b>4</b><strong>Navigation in the fan's words</strong><span>Signed music and signed books lead because that is what TalkShopLive is known for. Merch gets its own door (today it only turns up in search), and genre chips match the ad sitelinks so a rock fan from a rock ad lands one tap from rock.</span></div></aside>
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="eyebrow">Shop the store</span><h2>Find your thing</h2></div></div>
+    <div class="cats reveal">
+      <a class="cat big" href="https://talkshop.live/category/music" target="_blank" rel="noopener"><h3>Signed music</h3><p>Autographed vinyl, CDs and exclusive color variants you won't find anywhere else.</p></a>
+      <a class="cat" href="https://talkshop.live/category/books" target="_blank" rel="noopener"><h3>Signed books</h3><p>Memoirs, cookbooks and bestsellers, signed by the author.</p></a>
+      <a class="cat" href="#bundle"><h3>Artist merch</h3><p>Tees, hats and gifts from the bands you collect.</p></a>
+      <a class="cat" href="https://talkshop.live/category/beauty" target="_blank" rel="noopener"><h3>Beauty</h3><p>Skincare, makeup and fragrance, demoed live.</p></a>
+      <a class="cat" href="#beyond"><h3>Home &amp; kitchen</h3><p>Shop along with hosts and brands.</p></a>
+      <a class="cat" href="https://talkshop.live/category/electronics" target="_blank" rel="noopener"><h3>Electronics</h3><p>Tech and gadgets from live demos.</p></a>
+      <a class="cat" href="#drops"><h3>Replays</h3><p>Missed it live? Watch and shop it now.</p></a>
+    </div>
+    <div class="genres reveal"><small>Music by genre</small><button class="chip">Country</button><button class="chip">Rock</button><button class="chip">Pop</button><button class="chip">Metal</button><button class="chip">Blues</button><button class="chip">Holiday</button></div>
+  </div>
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+<section style="padding-top:0">
+  <aside class="note"><div><b>5</b><strong>Products that say why they're special</strong><span>The signed badge is the selling point, so it reads like a signature. Add to cart opens a cart that recommends more from the same artist first, not a generic bestseller. Try adding the Blackberry Smoke or Burn Eternal items. Measure: add-on rate, AOV against the $30 to $40 baseline.</span></div></aside>
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="eyebrow">Just dropped</span><h2>New signed arrivals</h2></div><a class="btn btn-line" href="https://talkshop.live/category/autographed" target="_blank" rel="noopener">Shop all signed</a></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- ================= BUNDLE ================= -->
+<section id="bundle" style="padding-top:0">
+  <aside class="note"><div><b>6</b><strong>Add-ons and cross-sell, on purpose</strong><span>Blackberry Smoke's hat, badge and tee exist on the site today but sit outside the menu and never appear in the cart. Pairing the signed record with the artist's own merch and a visible shipping goal is the simplest lift to basket size. The $75 threshold is a placeholder to test, only where seller terms and margins allow.</span></div></aside>
+  <div class="wrap"><div class="bundle reveal">
+    <div>
+      <span class="eyebrow" style="color:var(--gold)">Complete the drop</span>
+      <h2 style="margin-top:10px">The record's signed. Now build the bundle.</h2>
+      <p class="lede">Blackberry Smoke is celebrating 25 years. Pair the signed best-of with the anniversary merch, all from the band's own store.</p>
+      <div class="hero-im"><img alt="25 years of Blackberry Smoke live celebration" loading="lazy" src="https://assets.talkshop.live/thumbnail/7987557b-5710-4fc3-97e9-afcde08379ea.jpg"></div>
+    </div>
+    <div>
+      <div class="adds" id="adds"></div>
+      <div class="ship"><p id="bShipTxt"></p><div class="bar"><i id="bShipBar"></i></div></div>
+      <div class="total"><div><small style="color:rgba(255,255,255,.6)">Bundle total</small><br><b id="bTotal">$0</b></div><button class="btn btn-red" id="bAdd">Add bundle to cart</button></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ================= BEYOND ================= -->
+<section id="beyond" style="padding-top:0">
+  <aside class="note"><div><b>7</b><strong>Beauty and brands get a home, not the homepage</strong><span>Beauty, kitchen and retail partners are real revenue, but mixed into the same rail as Sheryl Crow they blur the story. A dedicated "shop-along" block keeps them visible and gives them their own name, while the top of the page stays about artists and signed releases.</span></div></aside>
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="eyebrow">Beyond the record store</span><h2>Beauty, home and brand shop-alongs</h2><p class="lede">Same idea, different aisle. Hosts and brands demo their favorites live, and you shop along as they go.</p></div></div>
+    <div class="beyond">
+      <div class="by-card txt reveal"><div class="tx"><h3>Beauty, live</h3><p>Skincare, makeup and fragrance from hosts who show you how it wears.</p>
+        <ul><li><span>Biodance Bio-Collagen Real Deep Mask (4 pack)</span><b>$22.00</b></li><li><span>Lancer Mineral Sun Shield SPF 30</span><b>$48.00</b></li><li><span>Vintage Vixen "The Loren" lashes</span><b>$24.99</b></li></ul>
+        <a href="https://talkshop.live/category/beauty" target="_blank" rel="noopener">Shop beauty →</a></div></div>
+      <div class="by-card reveal"><div class="th"><img loading="lazy" alt="Fall on the Farm with Jimenez Sisters Ranch" src="https://assets.talkshop.live/thumbnail/f8028d02-660d-4c0c-bae5-0495e20d0df7.JPG"></div><div class="tx"><h3>Small-batch makers</h3><p>Jimenez Sisters Ranch goes live with seasonal gift sets like Vanilla Sugar and Pumpkin Spice Latte.</p><a href="https://talkshop.live/channels/jimenezsistersranch" target="_blank" rel="noopener">Visit the channel →</a></div></div>
+      <div class="by-card reveal"><div class="th"><img loading="lazy" alt="Make Merry with Walmart" src="https://assets.talkshop.live/thumbnail/5ce1c116-ae2a-4448-88e0-703479cecca6.jpg"></div><div class="tx"><h3>Brands you know</h3><p>Walmart's Make Merry brings The Pioneer Woman home collection to a live holiday shop-along.</p><a href="https://talkshop.live/channels/walmart" target="_blank" rel="noopener">Visit the channel →</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUST ================= -->
+<section style="padding-top:0">
+  <aside class="note"><div><b>8</b><strong>Answer the collector's doubts before checkout</strong><span>Collectors say trust is everything with signed goods, and some expected a signed cover and got a signed insert. Today "Autographed" has no proof on the page and shipping stays blank until checkout. Copy here is placeholder until policies are confirmed.</span></div></aside>
+  <div class="wrap"><div class="trust reveal">
+    <div><span class="sig">Signed, for real</span><h3>Signed by the artist</h3><p>Autographed items are signed by the artist or author who made them.</p></div>
+    <div><span class="sig">No surprises</span><h3>Know what's signed</h3><p>Cover, insert or bookplate. Every listing shows exactly what you get.</p></div>
+    <div><span class="sig">Up front</span><h3>Shipping before checkout</h3><p>See the cost and the ship date on the product page, preorders included.</p></div>
+    <div><span class="sig">Limited</span><h3>Small runs, real scarcity</h3><p>Exclusive colors and signed editions are gone when they're gone.</p></div>
+  </div></div>
+</section>
+
+<!-- ================= SIGNUP ================= -->
+<section id="alerts" style="padding-top:0">
+  <aside class="note"><div><b>9</b><strong>The owned audience is the biggest lever</strong><span>Most sales happen before and after the live. A fan who isn't buying today can still pick genres, which builds HubSpot segments and ad audiences so the next drop reaches them without paying for the same customer twice. Measure: capture rate, revenue per recipient by segment.</span></div></aside>
+  <div class="wrap"><form class="signup reveal" data-form>
+    <h2>Never miss a signed drop.</h2>
+    <p>Pick what you love and we'll only send drops that match. Signed editions sell out, so alerts are how collectors get there first.</p>
+    <div class="picks" id="picks"><button type="button" class="pick" aria-pressed="true">Country</button><button type="button" class="pick" aria-pressed="false">Rock</button><button type="button" class="pick" aria-pressed="false">Pop</button><button type="button" class="pick" aria-pressed="true">Books</button><button type="button" class="pick" aria-pressed="false">Beauty</button><button type="button" class="pick" aria-pressed="false">Merch</button></div>
+    <div class="field"><input type="email" required placeholder="Email address" aria-label="Email address" autocomplete="email"><button class="btn">Send me drops</button></div>
+    <div class="ok" role="status"></div>
+  </form></div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section style="padding-top:0">
+  <aside class="note"><div><b>10</b><strong>Free traffic from search and AI answers</strong><span>The live homepage title is just "TalkShopLive®" with a meta description written for brands and no FAQ. This page ships a descriptive title, a fan-facing description and FAQ structured data, so search engines and AI assistants repeat the same one-line definition.</span></div></aside>
+  <div class="wrap">
+    <div class="sec-head reveal" style="justify-content:center;text-align:center"><div><span class="eyebrow">Good to know</span><h2>Questions fans ask</h2></div></div>
+    <div class="faq reveal">
+      <details open><summary>What is TalkShopLive?</summary><p>TalkShopLive (TSL) is a live shopping platform where musicians, authors and creators host live videos and sell their newest releases, including signed vinyl, CDs, books, merch and exclusive editions, right inside the stream.</p></details>
+      <details><summary>What is a live drop? Is it a concert?</summary><p>A live drop is a shoppable live video. Some artists perform, some tell the story behind the release, and all of them take fan questions. Either way, everything on screen can be bought during the drop.</p></details>
+      <details><summary>Are the autographs real?</summary><p>Yes. Autographed items are signed by the artist or author, and each listing shows what is signed, such as the cover, an insert or a bookplate.</p></details>
+      <details><summary>What if I miss the live?</summary><p>Replays stay on the site and remain shoppable while items are in stock. You can also set a reminder for any upcoming drop.</p></details>
+      <details><summary>Do you sell more than music and books?</summary><p>Yes. Alongside signed music and books you'll find artist merch, beauty, home and kitchen, and live shop-alongs from brands and makers.</p></details>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0">
+  <div class="wrap"><div class="sell reveal"><div><h3>Artist, author or brand?</h3><p>Go live to your fans and sell directly inside the video. The seller pitch lives here, so the rest of the page can speak to fans.</p></div><a class="btn btn-line" href="https://talkshop.live" target="_blank" rel="noopener">Sell on TalkShopLive</a></div></div>
+</section>
+</main>
