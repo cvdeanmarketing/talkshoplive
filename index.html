@@ -503,6 +503,7 @@ body.cart .scrim{opacity:1;pointer-events:auto}body.cart .drawer{transform:none}
 
 <script>
 const C='https://cdn.talkshop.live/eyJidWNrZXQiOiJ0c2wtaW1hZ2VzLXByb2R1Y3Rpb24iLCJrZXkiOiJ2YXJpYW50X2ltYWdlcy8', T='https://assets.talkshop.live/thumbnail/', S='https://talkshop.live';
+const K=k=>'https://cdn.talkshop.live/'+btoa(JSON.stringify({bucket:'tsl-images-production',key:'variant_images/'+k,edits:{resize:{width:600,fit:'contain'}}}));
 const FREE=75, $=s=>document.querySelector(s), money=n=>'$'+n.toFixed(2);
 
 // Catalog. Names, prices and tags as listed on talkshop.live, November 2026.
@@ -516,12 +517,17 @@ const P={
  andy:{n:"Andy's Bravo Scrapbook, Signed",a:'Andy Cohen',p:38.00,t:['Preorder'],s:1,book:1,i:C+'4Mjg5OTk1L29yaWdpbmFsL3JlYWRlcmxpbmstYW5keS1zLWJyYXZvLXNjcmFwYm9vay1zaWduZWQuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2MDAsImZpdCI6ImNvbnRhaW4ifX19',u:'/product/_v5hCAY-sVEQ/andy-s-bravo-scrapbook-signed-9d077168'},
  burnlp:{n:'Burn Eternal, LP Signed',a:'Burn Eternal',p:37.98,t:['Preorder'],s:1,i:C+'4Mjk3MTkyL29yaWdpbmFsL2Ftc3RzbC1idXJuLWV0ZXJuYWwtbHAtc2lnbmVkLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NjAwLCJmaXQiOiJjb250YWluIn19fQ==',u:'/product/ggqAnotLhZ7T/burn-eternal-lp-signed'},
  burncd:{n:'Burn Eternal, CD Signed',a:'Burn Eternal',p:16.98,t:['Preorder'],s:1,i:C+'4Mjk3MTkwL29yaWdpbmFsL2Ftc3RzbC1idXJuLWV0ZXJuYWwtY2Qtc2lnbmVkLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NjAwLCJmaXQiOiJjb250YWluIn19fQ==',u:'/product/1DgPLHJD4bfR/burn-eternal-cd-signed'},
+ dgbook:{n:'Eternally Electric: The Message in My Music, Signed',a:'Debbie Gibson',p:30.00,t:[],s:1,book:1,i:K('8303353/original/readerlink-eternally-electric-the-message-in-my-music-signed.jpg'),u:'/product/z5BXcXmEvqEb/eternally-electric-the-message-in-my-music-signed'},
+ dgbody:{n:'The Body Remembers, CD with Autograph',a:'Debbie Gibson',p:31.98,t:[],s:1,i:K('7035384/original/ingramentertainment-the-body-remembers-autographed-cd.jpg'),u:'/channels/debbiegibson'},
+ sherylcd:{n:'Pick You Up, CD',a:'Sheryl Crow',p:13.98,t:[],s:0,i:K('8112154/original/amstsl-pick-you-up-cd.jpeg'),u:'/channels/sherylcrow'},
+ garth:{n:'Double LIVE, LP',a:'Garth Brooks',p:14.97,t:[],s:0,i:K('8299896/original/amstsl-double-live-lp.jpg'),u:'/product/7SCpBiHiIoKW/double-live-lp'},
  bbs2cd:{n:'Rattle Ramble and Roll, Signed 2CD Set',a:'Blackberry Smoke',p:29.99,t:['Limited'],s:1,i:C+'4MzAzNjEyL29yaWdpbmFsL2JsYWNrYmVycnlzbW9rZS1yYXR0bGUtcmFtYmxlLWFuZC1yb2xsLWNkLXNpZ25lZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjYwMCwiZml0IjoiY29udGFpbiJ9fX0=',u:'/product/_IU38T6a67x4/rattle-ramble-and-roll-signed-2cd-set-limited-first-ever-best-of'},
  bbshat:{n:'25th Anniversary Hat',a:'Blackberry Smoke',p:29.99,t:[],s:0,merch:1,i:C+'4MzAxMjY4L29yaWdpbmFsL2JsYWNrYmVycnlzbW9rZS0yNXRoLWFubml2ZXJzYXJ5LWhhdC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjYwMCwiZml0IjoiY29udGFpbiJ9fX0=',u:'/channels/blackberrysmoke'},
  bbsbadge:{n:'25th Anniversary Auto Badge',a:'Blackberry Smoke',p:29.99,t:[],s:0,merch:1,i:C+'4MzAxMjY2L29yaWdpbmFsL2JsYWNrYmVycnlzbW9rZS0yNXRoLWFubml2ZXJzYXJ5LWF1dG8tYmFkZ2UuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2MDAsImZpdCI6ImNvbnRhaW4ifX19',u:'/channels/blackberrysmoke'},
  bbstee:{n:'25th Anniversary World Tour T-shirt',a:'Blackberry Smoke',p:35.00,t:[],s:0,merch:1,i:C+'4MzA1MTM0L29yaWdpbmFsL2JsYWNrYmVycnlzbW9rZS1iYnMtMjV0aC1hbm5pdmVyc2FyeS13b3JsZC10b3VyLXQtc2hpcnQuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2MDAsImZpdCI6ImNvbnRhaW4ifX19',u:'/channels/blackberrysmoke'},
  bbssweater:{n:'Ugly Knit Christmas Sweater',a:'Blackberry Smoke',p:69.99,t:[],s:0,merch:1,i:C+'4MzAxMjY5L29yaWdpbmFsL2JsYWNrYmVycnlzbW9rZS11Z2x5LWtuaXQtY2hyaXN0bWFzLXN3ZWF0ZXIuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2MDAsImZpdCI6ImNvbnRhaW4ifX19',u:'/channels/blackberrysmoke'}
 };
+const G={randy:['country'],garth:['country'],bbs2cd:['rock','country'],sheryl:['rock','pop'],sherylcd:['rock','pop'],winter:['pop','holiday'],dgbody:['pop'],duff:['pop','holiday'],burnlp:['rock'],burncd:['rock'],sour:['food'],tmi:['memoir','pop'],andy:['memoir'],dgbook:['memoir','pop']};
 const GRID=['randy','sheryl','winter','duff','bbs2cd','sour','andy','burnlp'];
 
 const SHOWS={up:[
@@ -567,16 +573,20 @@ $('#bAdd').onclick=()=>{bundle().forEach(id=>{if(!cart.includes(id))cart.push(id
 
 // ---------- cart with artist-first cross-sell
 let cart=[];
-function suggest(){const have=new Set(cart),out=[];
-  cart.forEach(id=>Object.keys(P).forEach(k=>{if(!have.has(k)&&!out.includes(k)&&P[k].a===P[id].a)out.push(k)}));
-  let label='More from '+(out[0]?P[out[0]].a:'');
-  if(!out.length&&cart.length){const last=P[cart[cart.length-1]];Object.keys(P).forEach(k=>{if(!have.has(k)&&!P[k].merch&&!!P[k].book===!!last.book&&out.length<3)out.push(k)});label=last.book?'More signed books':'More signed music'}
-  return {ids:out.slice(0,3),label}}
+function suggest(){const have=new Set(cart),keys=Object.keys(P).filter(k=>!have.has(k)),last=P[cart[cart.length-1]];
+  if(!last)return {artist:[],similar:[]};
+  // 1. Same artist, most recently added first, merch ahead of other formats
+  const artists=[...new Set(cart.map(i=>P[i].a))].reverse();
+  const artist=artists.flatMap(a=>keys.filter(k=>P[k].a===a).sort((x,y)=>(P[y].merch||0)-(P[x].merch||0))).slice(0,3);
+  // 2. Similar: shared genre with anything in the cart, then same format
+  const mine=new Set(cart.flatMap(i=>G[i]||[])),inCart=new Set(artists);
+  const similar=keys.filter(k=>!inCart.has(P[k].a)&&!P[k].merch).map(k=>({k,sc:(G[k]||[]).filter(g=>mine.has(g)).length*2+(!!P[k].book===!!last.book?1:0)})).filter(x=>x.sc>0).sort((x,y)=>y.sc-x.sc).slice(0,3).map(x=>x.k);
+  return {artist,similar,name:artist[0]?P[artist[0]].a:last.a}}
 function draw(){const t=cart.reduce((s,i)=>s+P[i].p,0);
   $('#cartCount').textContent=cart.length;
   $('#lines').innerHTML=cart.length?cart.map(id=>`<div class="line"><img alt="" src="${P[id].i}"><div><strong>${P[id].n}</strong><small>${P[id].a}</small></div><div style="text-align:right"><b>${money(P[id].p)}</b><br><button data-rm="${id}">Remove</button></div></div>`).join(''):'<p class="empty">Your cart is empty.<br>Add something signed.</p>';
-  const s=suggest();
-  $('#xs').innerHTML=s.ids.length?`<h3>${s.label}</h3><small>Ships together when it's from the same seller.</small>`+s.ids.map(id=>`<div class="line"><img alt="" src="${P[id].i}"><div><strong>${P[id].n}</strong><small>${P[id].merch?'Official merch':P[id].s?'Signed':P[id].a}</small></div><button class="btn btn-line btn-sm" style="text-decoration:none;color:var(--ink)" data-add="${id}">+ ${money(P[id].p)}</button></div>`).join(''):'';
+  const s=suggest(),row=id=>`<div class="line"><img alt="" src="${P[id].i}"><div><strong>${P[id].n}</strong><small>${P[id].merch?'Official merch':(P[id].s?'Signed · ':'')+P[id].a}</small></div><button class="btn btn-line btn-sm" style="text-decoration:none;color:var(--ink)" data-add="${id}">+ ${money(P[id].p)}</button></div>`;
+  $('#xs').innerHTML=(s.artist.length?`<h3>More from ${s.name}</h3><small>Add-ons from the same artist ship together.</small>`+s.artist.map(row).join(''):'')+(s.similar.length?`<h3>Fans also add</h3><small>Similar signed releases, picked from what's in your cart.</small>`+s.similar.map(row).join(''):'');
   $('#cTotal').textContent=money(t);$('#cShipTxt').textContent=shipText(t);$('#cShipBar').style.width=Math.min(100,t/FREE*100)+'%'}
 function open(){document.body.classList.add('cart');$('#drawer').setAttribute('aria-hidden','false')}
 function close(){document.body.classList.remove('cart');$('#drawer').setAttribute('aria-hidden','true')}
